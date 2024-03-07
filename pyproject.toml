@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "esocialtotalizadorextractor"
+version = "0.1.0"
+description = "Extrair dados de arquivos XML baixados do ambiente web do eSocial para uma planilha organizada e de fácil consulta."
+authors = ["Trasiblo Martins <trasiblo@hotmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+xmltodict = "^0.13.0"
+tqdm = "^4.66.2"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.2"
+coverage = "^7.4.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
