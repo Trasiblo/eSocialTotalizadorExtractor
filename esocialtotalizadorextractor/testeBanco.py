@@ -1,7 +1,8 @@
-import esocialtotalizadorextractor.banco.db as db
-import esocialtotalizadorextractor.banco as conexao
+import banco.db as db
+import banco as conexao
 import locale
 import pandas as pd
+
 
 def formatDinheiro(vlr):
     #locale.setlocale(locale.LC_ALL, 'pt')
@@ -30,6 +31,7 @@ df1 = pd.DataFrame(valor)
 
 print(df1)
 df1.to_csv('teste.csv',sep=';', index=False)
+df1.to_excel('teste.xlsx', index=False, float_format='%.2f')
 
 colunas = valores.description
 
