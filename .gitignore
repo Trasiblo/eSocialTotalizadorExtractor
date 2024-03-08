@@ -1,5 +1,6 @@
 #bancos teste
 xmls.db
+teste.csv
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
