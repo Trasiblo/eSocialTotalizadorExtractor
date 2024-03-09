@@ -23,7 +23,8 @@ def dict_factory(cursor, row):
     return d
 
 
-valores = db.get_valor(conexao.conn)
+#valores = db.get_valor(conexao.conn)
+valores = db.get_valor_analitico(conexao.conn)
 valores.row_factory = dict_factory
 valor = valores.fetchall()
 
