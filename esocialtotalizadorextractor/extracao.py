@@ -116,30 +116,5 @@ class extracao:
         recibo = retornoEvento['recibo']
         dados = recibo
         tabela['recibo_nrRecibo'] = dados['nrRecibo']
-    
-
-        #try:
-        #
-        #    #inicia com o valor zerado
-        #    tabela['valor_baseInss'] = '0'
-        #    tabela['valor_descInss'] = '0'
-        #    
-        #    """
-        #    Informações sobre bases de cálculo, descontos e deduções de 
-        #    contribuições sociais devidas à Previdência Social e a Outras Entidades e Fundos.
-        #    """
-        #    for infoBaseCS in infoBaseCSs:
-        #        if(infoBaseCS['tpValor'] == '11'): #11 - Base de cálculo da contribuição previdenciária normal
-        #            tabela['valor_baseInss'] = infoBaseCS['valor'] 
-        #        
-        #        #19 - Base de cálculo da contribuição previdenciária exclusiva do empregado
-        #        
-        #        if(infoBaseCS['tpValor'] == '21'): #21 - Valor total descontado do trabalhador para recolhimento à Previdência Social
-        #            tabela['valor_descInss'] = infoBaseCS['valor'] 
-        #        
-        #        #32 - Valor pago ao trabalhador a título de salário-maternidade
-        #
-        #except KeyError as error:  
-        #    print(error)
 
         return tabela
