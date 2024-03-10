@@ -1,5 +1,5 @@
 import sqlite3
-from banco.relatorio import relatorio as rel
+from esocialtotalizadorextractor.banco.relatorio import relatorio as rel
 
 """banco de dados
 """

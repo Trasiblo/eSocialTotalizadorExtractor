@@ -1,6 +1,6 @@
 import sqlite3
 
-from banco import conn
+from esocialtotalizadorextractor.banco import conn
 
 
 def criar_tabela():
