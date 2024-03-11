@@ -65,7 +65,7 @@ ler = lerXml(diretorio)
 ler.s5001() 
 ```
 
-Cole o código no arquivo ler.py
+Cole o código no arquivo ler.py, salve as alterações e feche
 
 ![](https://github.com/Trasiblo/eSocialTotalizadorExtractor/raw/main/gifs/colar_ler.gif)
 
@@ -90,15 +90,30 @@ df2.to_excel(arqExcel, index=False, float_format='%.2f', sheet_name='Analitica')
 arqExcel.close()
 ```
 
-Cole o código no arquivo relatorio.py
+Cole o código no arquivo relatorio.py, salve as alterações e feche
 
 ![](https://github.com/Trasiblo/eSocialTotalizadorExtractor/raw/main/gifs/colar_relatorio.gif)
 
 ### 9. Descompactando zip dos xmls do eSocial
 
+- Copie o arquivo zip baixado do ambiente web do eSocial para a pasta e descompacte-o.
+- Renomeie a pasta.
+
 ![](https://github.com/Trasiblo/eSocialTotalizadorExtractor/raw/main/gifs/xmls_esocial.gif)
 
 ### 10. Executando os códigos e abrindo o arquivo Excel gerado, "teste.xlsx".
+
+- Altere o nome da pasta no código
+
+- Executar arquivo ler.py
+```
+python ler.py
+```
+
+- Executar arquivo relatorio.py
+```
+python relatorio.py
+```
 
 ![](https://github.com/Trasiblo/eSocialTotalizadorExtractor/raw/main/gifs/executar_codigos.gif)
 
