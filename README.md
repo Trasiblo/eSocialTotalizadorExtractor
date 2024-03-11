@@ -53,7 +53,7 @@ pip install https://github.com/Trasiblo/eSocialTotalizadorExtractor/raw/main/dis
 ![](https://github.com/Trasiblo/eSocialTotalizadorExtractor/raw/main/gifs/criar_arquivos.gif)
 
 
-### 7. Lendo os arquivos baixados do eSocial (ler.py)
+### 7. Código para ler os arquivos baixados do eSocial (ler.py)
 
 ```python
 from esocialtotalizadorextractor.lerTotalizador import *
@@ -70,7 +70,7 @@ Cole o código no arquivo ler.py
 ![](https://github.com/Trasiblo/eSocialTotalizadorExtractor/raw/main/gifs/colar_ler.gif)
 
 
-### 8. Gerando o arquivo Excel com os dados Lidos (relatorio.py)
+### 8. Código para gerar o arquivo Excel com os dados Lidos (relatorio.py)
 
 ```python
 from esocialtotalizadorextractor.banco import *
@@ -98,7 +98,7 @@ Cole o código no arquivo relatorio.py
 
 ![](https://github.com/Trasiblo/eSocialTotalizadorExtractor/raw/main/gifs/xmls_esocial.gif)
 
-### 10. Executando o código e abrindo o arquivo Excel gerado, "teste.xlsx".
+### 10. Executando os códigos e abrindo o arquivo Excel gerado, "teste.xlsx".
 
 ![](https://github.com/Trasiblo/eSocialTotalizadorExtractor/raw/main/gifs/executar_codigos.gif)
 
