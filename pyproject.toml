@@ -9,7 +9,7 @@ readme = "README.md"
 python = "^3.10"
 xmltodict = "^0.13.0"
 tqdm = "^4.66.2"
-pandas = "2.0.3"
+pandas = "^2.0.3"
 openpyxl = "^3.1.2"
 
 
