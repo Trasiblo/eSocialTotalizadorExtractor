@@ -72,8 +72,39 @@ class extracao:
         finally:    
             return tabela
     
+    def s5002(self):
+        tabela = {}
+        tabela['arquivo'] = self.nome_arquivo
+        
+        #evtBasesTrab
+        dados =  self.data_dict['eSocial']['retornoProcessamentoDownload']['evento']['eSocial']
+        
+        evtIrrfBenef = dados['evtIrrfBenef']
+        dados = evtIrrfBenef
+        tabela['perApur'] = dados['ideEvento']['perApur'] #referencia pagamento
+        tabela['cpfBenef'] = dados['ideTrabalhador']['cpfBenef'] 
+        tabela['nrRecArqBase'] = dados['ideEvento']['nrRecArqBase']
     
-    def s3000(self):
+
+        try:
+            ideTrabalhador = dados['ideTrabalhador']
+            dados = ideTrabalhador
+
+            totInfoIR = dados['totInfoIR']['consolidApurMen']
+            dados = totInfoIR
+            tabela['vlrRendTrib'] = dados['vlrRendTrib'] 
+            tabela['vlrRendTrib13'] = dados['vlrRendTrib13'] 
+            tabela['vlrPrevOficial'] = dados['vlrPrevOficial'] 
+            tabela['vlrPrevOficial13'] = dados['vlrPrevOficial13'] 
+            tabela['vlrCRMen'] = dados['vlrCRMen'] 
+            tabela['vlrCR13Men'] = dados['vlrCR13Men'] 
+          
+        #except KeyError as error:  
+            #print(error)
+        finally:    
+            return tabela
+    
+    def s3000(self, tpEvento = 'S-1200'):
         tabela = {}
         
         #nome do arquivo
@@ -99,7 +130,7 @@ class extracao:
         tabela['infoExclusao_cpfTrab'] = dados['cpfTrab']
         
         
-        if (tabela['infoExclusao_tpEvento'] == 'S-1200'):
+        if (tabela['infoExclusao_tpEvento'] == tpEvento):
             #   ideFolhaPagto
             ideFolhaPagto = infoExclusao['ideFolhaPagto']
             dados = ideFolhaPagto
