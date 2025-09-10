@@ -24,7 +24,7 @@ class lerXml:
 
 
     def s5001(self):
-        self.s3000(self, 'S-1200')
+        self.s3000('S-1200')
         #dados S-5001
         pasta = self.utilitario.listarArquivos(self.diretorio)
         barra = tqdm(total=len(pasta), desc='S-5001', unit='arq')
@@ -43,7 +43,7 @@ class lerXml:
             barra.update()
 
     def s5002(self):
-        self.s3000(self, 'S-1210')
+        self.s3000('S-1210')
         #dados S-5002
         pasta = self.utilitario.listarArquivos(self.diretorio, 'S-5002')
         barra = tqdm(total=len(pasta), desc='S-5002', unit='arq')
