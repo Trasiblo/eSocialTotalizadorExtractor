@@ -61,7 +61,7 @@ class lerXml:
             self.banco_s5002.add(tabela)
             barra.update()
 
-    def s3000(self):
+    def s3000(self, tpEvento:str):
         #dados S-3000  
         pasta = self.utilitario.listarArquivos(self.diretorio, 'S-3000')
         barra = tqdm(total=len(pasta), desc='S-3000', unit='arq')
@@ -75,7 +75,7 @@ class lerXml:
             
             extrai = self.extracao.extracao(nome_arquivo, data_dict)
 
-            tabela = extrai.s3000()
+            tabela = extrai.s3000(tpEvento=tpEvento)
             
             self.banco_s3000.add(tabela)
             barra.update()
