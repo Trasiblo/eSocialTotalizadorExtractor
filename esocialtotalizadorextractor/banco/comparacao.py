@@ -5,18 +5,14 @@ from esocialtotalizadorextractor.banco import conn
 def criar_tabela():
     """ cria a tabela 'tarefa' caso ela não exista """
     conn.execute("""
-    create table if not exists s5002 (
-        --id text primary key,
+    create table if not exists comparacao (
         arquivo text,
-        nrRecArqBase text,
         perApur text,
-        cpfBenef text,
+        cpf text,
+        nome text,
         vlrRendTrib float,
-        vlrRendTrib13 float,
         vlrPrevOficial float,
-        vlrPrevOficial13 float,
-        vlrCRMen float,
-        vlrCR13Men float
+        vlrCRMen float
     )
     """)    
 
@@ -27,13 +23,13 @@ def add(dados:dict):
     colunas = ', '.join(dados.keys()) #lista de colunas separadas por virgula
     curingas = ', '.join('?' * len(dados)) #quantidade de parametros ? separados por virgulas
     
-    sql = 'INSERT INTO s5002 ({}) VALUES ({})'.format(colunas, curingas)
+    sql = 'INSERT INTO comparacao ({}) VALUES ({})'.format(colunas, curingas)
     valores = [int(x) if isinstance(x, bool) else x for x in dados.values()]
     
     conn.execute(sql, valores)
     conn.commit()
 
 def limpar_registros():
-    """ exclui todos os registros da tabala s5002 """
-    conn.execute("delete from s5002")
+    """ exclui todos os registros da tabala comparacao """
+    conn.execute("delete from comparacao")
     conn.commit()
