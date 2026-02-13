@@ -38,12 +38,13 @@ venv\Scripts\activate
 
 Diretamente do repositório:
 
+links atualizados em (13/03/2026 às 09:39)
 ```
-pip install https://github.com/Trasiblo/eSocialTotalizadorExtractor/raw/main/distt/esocialtotalizadorextractor-0.1.0-py3-none-any.whl
+pip install https://github.com/Trasiblo/eSocialTotalizadorExtractor/raw/main/distt/esocialtotalizadorextractor-0.2.2-py3-none-any.whl
 ```
 ou
 ```
-pip install https://github.com/Trasiblo/eSocialTotalizadorExtractor/raw/main/distt/esocialtotalizadorextractor-0.1.0.tar.gz
+pip install https://github.com/Trasiblo/eSocialTotalizadorExtractor/raw/main/distt/esocialtotalizadorextractor-0.2.2.tar.gz
 ```
 
 ![](https://github.com/Trasiblo/eSocialTotalizadorExtractor/raw/main/gifs/instalar.gif)
@@ -55,6 +56,7 @@ pip install https://github.com/Trasiblo/eSocialTotalizadorExtractor/raw/main/dis
 
 ### 7. Código para ler os arquivos baixados do eSocial (ler.py)
 
+#### 7.1 Leitura dos totalizadores S-5001 (Informações das Contribuições Sociais por Trabalhador)
 ```python
 from esocialtotalizadorextractor.lerTotalizador import *
 
@@ -64,6 +66,18 @@ ler = lerXml(diretorio)
 
 ler.s5001() 
 ```
+#### 7.2 Leitura dos totalizadores S-5002 (Imposto de Renda Retido na Fonte por Trabalhador)
+```python
+from esocialtotalizadorextractor.lerTotalizador import *
+
+diretorio = '202402' #pasta onde os arquivos xmls foram descompactados
+
+ler = lerXml(diretorio)
+
+ler.s5002() 
+```
+
+
 
 Cole o código no arquivo ler.py, salve as alterações e feche
 
@@ -72,6 +86,7 @@ Cole o código no arquivo ler.py, salve as alterações e feche
 
 ### 8. Código para gerar o arquivo Excel com os dados Lidos (relatorio.py)
 
+#### 8.1 Gerar relatório dos totalizadores S-5001 (Informações das Contribuições Sociais por Trabalhador)
 ```python
 from esocialtotalizadorextractor.banco import *
 import pandas as pd
@@ -83,6 +98,24 @@ valor = relatorio.get_valor_analitico()
 df2 = pd.DataFrame(valor)
 
 arqExcel = pd.ExcelWriter('teste.xlsx') #nome do arquivo que sera gerado
+
+df1.to_excel(arqExcel, index=False, float_format='%.2f', sheet_name='Resumo')
+df2.to_excel(arqExcel, index=False, float_format='%.2f', sheet_name='Analitica')
+
+arqExcel.close()
+```
+#### 8.2 Gerar relatório dos totalizadores S-5002 (Imposto de Renda Retido na Fonte por Trabalhador)
+```python
+from esocialtotalizadorextractor.banco import *
+import pandas as pd
+
+valor = relatorio5002.get_valor()
+df1 = pd.DataFrame(valor)
+
+valor = relatorio5002.get_valor_analitico()
+df2 = pd.DataFrame(valor)
+
+arqExcel = pd.ExcelWriter('s5002.xlsx') #nome do arquivo que sera gerado
 
 df1.to_excel(arqExcel, index=False, float_format='%.2f', sheet_name='Resumo')
 df2.to_excel(arqExcel, index=False, float_format='%.2f', sheet_name='Analitica')
