@@ -16,7 +16,20 @@ def criar_tabela():
         vlrPrevOficial float,
         vlrPrevOficial13 float,
         vlrCRMen float,
-        vlrCR13Men float
+        vlrCR13Men float,
+        vlrParcIsenta65 float,
+        vlrParcIsenta65Dec float,
+        vlrDiarias float,
+        vlrAjudaCusto float,
+        vlrIndResContrato float,
+        vlrAbonoPec float,
+        vlrRendMoleGrave float,
+        vlrRendMoleGrave13 float,
+        vlrAuxMoradia float,
+        vlrBolsaMedico float,
+        vlrBolsaMedico13 float,
+        vlrJurosMora float,
+        vlrIsenOutros float
     )
     """)    
 

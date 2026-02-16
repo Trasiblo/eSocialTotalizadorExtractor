@@ -97,7 +97,21 @@ class extracao:
             tabela['vlrPrevOficial'] = dados['vlrPrevOficial'] 
             tabela['vlrPrevOficial13'] = dados['vlrPrevOficial13'] 
             tabela['vlrCRMen'] = dados['vlrCRMen'] 
-            tabela['vlrCR13Men'] = dados['vlrCR13Men'] 
+            tabela['vlrCR13Men'] = dados['vlrCR13Men']
+            tabela['vlrParcIsenta65'] = dados['vlrParcIsenta65'] 
+            tabela['vlrParcIsenta65Dec'] = dados['vlrParcIsenta65Dec'] 
+            tabela['vlrDiarias'] = dados['vlrDiarias'] 
+            tabela['vlrAjudaCusto'] = dados['vlrAjudaCusto']
+            tabela['vlrIndResContrato'] = dados['vlrIndResContrato'] 
+            tabela['vlrAbonoPec'] = dados['vlrAbonoPec'] 
+            tabela['vlrRendMoleGrave'] = dados['vlrRendMoleGrave']
+            tabela['vlrRendMoleGrave13'] = dados['vlrRendMoleGrave13'] 
+            tabela['vlrAuxMoradia'] = dados['vlrAuxMoradia'] 
+            tabela['vlrBolsaMedico'] = dados['vlrBolsaMedico'] 
+            tabela['vlrBolsaMedico13'] = dados['vlrBolsaMedico13'] 
+            tabela['vlrJurosMora'] = dados['vlrJurosMora'] 
+            tabela['vlrIsenOutros'] = dados['vlrIsenOutros'] 
+           
           
         #except KeyError as error:  
             #print(error)
