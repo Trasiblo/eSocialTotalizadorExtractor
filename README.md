@@ -38,13 +38,10 @@ venv\Scripts\activate
 
 Diretamente do repositório:
 
-links atualizados em (13/03/2026 às 09:39)
+links atualizados em (16/02/2026 às 16:43) agora captura consolidApurMen do S-5002 (Imposto de Renda Retido na Fonte por Trabalhador)
+
 ```
-pip install https://github.com/Trasiblo/eSocialTotalizadorExtractor/raw/main/distt/esocialtotalizadorextractor-0.2.2-py3-none-any.whl
-```
-ou
-```
-pip install https://github.com/Trasiblo/eSocialTotalizadorExtractor/raw/main/distt/esocialtotalizadorextractor-0.2.2.tar.gz
+pip install https://github.com/Trasiblo/eSocialTotalizadorExtractor/raw/main/distt/esocialtotalizadorextractor-0.2.3-py3-none-any.whl
 ```
 
 ![](https://github.com/Trasiblo/eSocialTotalizadorExtractor/raw/main/gifs/instalar.gif)
