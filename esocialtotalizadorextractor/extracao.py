@@ -75,9 +75,19 @@ class extracao:
     def s5002(self):
         tabela = {}
         tabela['arquivo'] = self.nome_arquivo
+
+        #divise o nome do arquivo e pega só o nome do arquivo
+        nome_arquivo = self.nome_arquivo.split("\\")[-1]
+        inicial_arquivo = nome_arquivo[:2]
         
         #evtBasesTrab
-        dados =  self.data_dict['eSocial']['retornoProcessamentoDownload']['evento']['eSocial']
+        #verificar se o arquivo inica 
+        #ID (bem do downlaod) ou eSocial_EventoRecibo (manual)
+        if (inicial_arquivo == 'ID'):
+            dados =  self.data_dict['eSocial']['retornoProcessamentoDownload']['evento']['eSocial']
+        
+        if (inicial_arquivo == 'eS'):
+            dados =  self.data_dict['eSocial']['retornoEventoCompleto']['evento']['eSocial']
         
         evtIrrfBenef = dados['evtIrrfBenef']
         dados = evtIrrfBenef
